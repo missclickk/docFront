@@ -1,0 +1,5 @@
+<div class="space" [ngSwitch]="this.state.getCurrentBookmark()?.mode">
+    <app-data-table *ngSwitchCase="'ListOfEntityes'"></app-data-table>        
+    <app-entity-constructor *ngSwitchCase="'EntityConstructor'" ></app-entity-constructor>
+    <div class="emtySapce" *ngSwitchDefault> </div>
+</div>

@@ -1,0 +1,14 @@
+    <form >
+        <div class="form-group">
+          <label for="exampleInputEmail1">Наименование организации;</label>
+          <input type="text" class="form-control" id="orgName"  placeholder="Наименование Организации" value="{{state.getInputsForCurrentBookmark(formType)[0]}}" (paste)="inputForm($event, 0 )" (input)="inputForm($event,0)" >
+        </div>
+        <div class="form-group">
+          <label for="address">Физический адрес</label>
+          <input type="text" class="form-control" id="address" placeholder="Физический адрес" value="{{state.getInputsForCurrentBookmark(formType)[1]}}" (paste)="inputForm($event, 1 )" (input)="inputForm($event,1)">
+        </div>
+        <div class="form-group">
+            <label for="legalAddress">Юридический адрес</label>
+            <input type="text" class="form-control" id="legalAddress" placeholder="Юридический адрес" value="{{state.getInputsForCurrentBookmark(formType)[2]}}" (paste)="inputForm($event, 2 )" (input)="inputForm($event,2)">
+          </div>
+      </form>

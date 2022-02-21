@@ -1,0 +1,4 @@
+<div    [ngSwitch]="this.state.getCurrentBookmark()?.table">
+    <app-org-constructor *ngSwitchCase="'ORGANIZATION'"></app-org-constructor>        
+    <div  *ngSwitchDefault> </div>
+</div>

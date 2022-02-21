@@ -1,0 +1,4 @@
+export enum ValidateType{
+    EMPTY_STRING_WITH_TRIM  = "EMPTY_STRING_WITH_TRIM",
+    LENGTH_MORE_THEN = "LENGTH_MORE_THEN"
+}

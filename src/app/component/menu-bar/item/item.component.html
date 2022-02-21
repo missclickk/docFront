@@ -1,0 +1,10 @@
+<p class="item" [ngClass]="{'child':isChild}" (click) = "createBookmark()" (click) = "showChilds(collapse)" [attr.aria-expanded]="!isCollapsed">
+    {{menuItem.title}}
+</p>
+
+<div  #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+        <app-item *ngFor="let item of menuItem.child"
+            [menuItem] = "item"
+            [isChild] = "true"
+        ></app-item>
+</div>

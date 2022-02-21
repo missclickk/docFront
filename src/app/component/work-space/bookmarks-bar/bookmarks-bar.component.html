@@ -1,0 +1,6 @@
+<div class="workSpaceMenu">
+    <app-bookmark (onColseBookmark) = "closeBookmark($event)"  (onChooseBookmark) = "chooseBookmark($event)"
+    *ngFor="let bookmark of state.getBookmarks()"
+        [bookmark] = "bookmark"
+    ></app-bookmark>
+</div>

@@ -22,7 +22,13 @@ export class OrganizationService extends BaseEntityService<OrgHttpService,Organi
         throw new Error("Пустые поля");
        
   }
- 
 
+  public override update(org : Organization) : Observable<Organization> {
+    if(this.validator.stringIsEmpty(org.physicalAdress, org.supervisor.firstName , org.supervisor.lastName , org.legalAddress ,org.supervisor.patronymic))
+      return super.update(org);
+    else 
+        throw new Error("Пустые поля");
+  }
 
+  
 }

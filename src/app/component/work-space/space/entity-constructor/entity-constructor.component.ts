@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from 'src/app/service/state.service';
+import { TableService } from 'src/app/service/table.service';
 
 @Component({
   selector: 'app-entity-constructor',
@@ -7,8 +8,7 @@ import { StateService } from 'src/app/service/state.service';
   styleUrls: ['./entity-constructor.component.css']
 })
 export class EntityConstructorComponent implements OnInit {
-  private inputState : Map<string,string[]> = new Map();
-  constructor(public state:StateService) { }
+  constructor(public state:StateService, public tableState : TableService) { }
 
   ngOnInit(): void {
   }

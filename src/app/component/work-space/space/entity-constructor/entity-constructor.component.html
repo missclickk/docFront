@@ -1,4 +1,7 @@
 <div    [ngSwitch]="this.state.getCurrentBookmark()?.table">
-    <app-org-constructor *ngSwitchCase="'ORGANIZATION'"></app-org-constructor>        
-    <div  *ngSwitchDefault> </div>
+    <app-org-constructor   *ngSwitchCase="'ORGANIZATION'" [data]="tableState.getFocusedRow().data"></app-org-constructor>
+    <app-employee-constructor   *ngSwitchCase="'EMPLOYEE'" [data]="tableState.getFocusedRow().data"></app-employee-constructor>
+    <app-subdivision-constructor   *ngSwitchCase="'SUBDIVIZON'" [data]="tableState.getFocusedRow().data"></app-subdivision-constructor>
+    <app-assigment-constructor   *ngSwitchCase="'ASSIGMENT'" [data]="tableState.getFocusedRow().data"></app-assigment-constructor>        
+    <div  *ngSwitchDefault>  </div>
 </div>

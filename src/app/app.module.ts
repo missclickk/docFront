@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { MenuBarComponent } from './component/menu-bar/menu-bar.component';
 import { WorkSpaceComponent } from './component/work-space/work-space.component';
@@ -17,7 +16,16 @@ import { EntityConstructorComponent } from './component/work-space/space/entity-
 import { OrgFormComponent } from './component/work-space/space/entity-constructor/from/org-form/org-form.component';
 import { EmployeeFormComponent } from './component/work-space/space/entity-constructor/from/employee-form/employee-form.component';
 import { OrgConstructorComponent } from './component/work-space/space/entity-constructor/org-constructor/org-constructor.component';
-import { TableRowComponent } from './component/work-space/space/data-table/table-row/table-row.component';
+import { DeleteModalComponent } from './component/modal/delete-modal/delete-modal.component';
+import { ModalDirective } from './directive/modal.directive';
+import { SubdivisionFormComponent } from './component/work-space/space/entity-constructor/from/subdivision-form/subdivision-form.component'
+import { AssigmentFormComponent } from './component/work-space/space/entity-constructor/from/assigment-form/assigment-form.component';
+import { EmployeeConstructorComponent } from './component/work-space/space/entity-constructor/employee-constructor/employee-constructor.component';
+import { AssigmentConstructorComponent } from './component/work-space/space/entity-constructor/assigment-constructor/assigment-constructor.component'
+import { SubdivisionConstructorComponent } from './component/work-space/space/entity-constructor/subdivision-constructor/subdivision-constructor.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -35,13 +43,21 @@ import { TableRowComponent } from './component/work-space/space/data-table/table
     OrgFormComponent,
     EmployeeFormComponent,
     OrgConstructorComponent,
-    TableRowComponent,
+    DeleteModalComponent,
+    ModalDirective,
+    SubdivisionFormComponent,
+    AssigmentFormComponent,
+    EmployeeConstructorComponent,
+    AssigmentConstructorComponent,
+    SubdivisionConstructorComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

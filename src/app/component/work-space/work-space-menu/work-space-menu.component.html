@@ -1,6 +1,8 @@
 <div class="workSpaceMenu">
-    <app-button
-    *ngFor="let type of buttonsTypes"
-        [buttonType] = "type"
-    ></app-button>
+    <ng-template appModal></ng-template>
+    <app-button [buttonType]="tableType.CREATE"></app-button>
+    <div   *ngIf="tableState.isFocused()" >
+        <app-button [buttonType] = "tableType.UPDATE"></app-button>
+        <app-button (onDeleteEvent) = "openModal()" [buttonType] = "tableType.DELETE"></app-button>
+    </div>
 </div>

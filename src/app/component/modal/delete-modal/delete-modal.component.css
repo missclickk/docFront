@@ -1,0 +1,20 @@
+.modalConteiner{
+    top:0px;
+    left: 0px;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 30;
+}
+
+.contentContainer{
+    border-radius: 0.5vw;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1);
+    width: 30vw;
+    height: 30vh;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+}

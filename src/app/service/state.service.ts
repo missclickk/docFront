@@ -1,4 +1,5 @@
 import {Injectable } from '@angular/core';
+import { ActionType } from '../model/enum/ActionType';
 import { TableType } from '../model/enum/TableType';
 import { Bookmark } from '../model/interface/Bookmark';
 import { MenuItem } from '../model/interface/MenuItem';
@@ -56,7 +57,6 @@ export  class StateService {
 
   public setCurrentBookmark( bookmark : Bookmark|null) : void {
     this.currentBookmark = bookmark;
-    console.log(this.currentBookmark);
   }
 
   public setStateOfCurrentBookmark ( value : string , formType : TableType , inputNumber : number) : void {
@@ -71,5 +71,14 @@ export  class StateService {
   public getInputsForCurrentBookmark(formtype : TableType) : string[] {
     return this.currentBookmark?.state.get(formtype) || [];
   }
+
+  public getActionType() : ActionType {
+    return this.currentBookmark?.action || ActionType.NONE;
+  }
+
+  public setActionType( action: ActionType ) : void {
+    if(this.currentBookmark)
+      this.currentBookmark.action = action;
+  } 
 
 }

@@ -1,12 +1,9 @@
 .workSpaceMenu{
     height: 5vh;
     width: 69.7vw;
-    background-color: aliceblue;
-    border: 00.1vw solid black;
+    border-bottom: 00.1vw solid black;
     display: flex;
     justify-content:left;
     align-items: center;
-    margin-top: 0.5vh;
-    margin-left: 0.5vh;
-        
+    margin-top: 0.8vh;
 }

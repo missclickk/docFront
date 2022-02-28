@@ -1,7 +1,9 @@
 import { state } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective } from 'src/app/directive/modal.directive';
 import { BookmarkMode } from 'src/app/model/enum/BookmarkMode';
 import { StateService } from 'src/app/service/state.service';
+import { DeleteModalComponent } from '../../modal/delete-modal/delete-modal.component';
 
 @Component({
   selector: 'app-space',
@@ -10,20 +12,5 @@ import { StateService } from 'src/app/service/state.service';
 })
 export class SpaceComponent implements OnInit {
   constructor(public state : StateService) { }
-
-  ngOnInit(): void {
-    
-    console.log(this.state.getCurrentBookmark()?.mode)
-    /*
-      
-      тут на основании етого стета рендерить
-      компонент 
-    
-    */
-  }
-
-  public foo () : void {
-    console.log("Здарова заебал");
-  }
-
+  ngOnInit(): void {}
 }

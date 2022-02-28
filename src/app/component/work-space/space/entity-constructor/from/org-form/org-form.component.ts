@@ -8,6 +8,7 @@ import { StateService } from 'src/app/service/state.service';
   styleUrls: ['./org-form.component.css']
 })
 export class OrgFormComponent implements OnInit {
+  @Input() data : any;
   @Output() onInputForm = new EventEmitter();
   public formType  : TableType = TableType.ORGANIZATION;
   constructor(public state: StateService) {

@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
-import { ButtonType } from '../model/enum/buttonType';
-import { Button } from '../model/interface/Button';
+import { ButtonType } from '../../model/enum/buttonType';
+import { Button } from '../../model/interface/Button';
 import { ButtonActionFactoryService } from './button-action-factory.service';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class ButtonFactoryService  {
   constructor(private actionFactory:  ButtonActionFactoryService) { 
     this.buttons.set(ButtonType.CREATE, {title:"Создать", action : actionFactory.getAction(ButtonType.CREATE),  style: "btn-success"} );
     this.buttons.set(ButtonType.UPDATE, {title:"Редактировать", action : actionFactory.getAction(ButtonType.UPDATE), style: "btn-warning"} );
-    this.buttons.set(ButtonType.DELETE, {title:"Удалить", action : actionFactory.getAction(ButtonType.DELETE), style: "btn-btn-danger"} );
+    this.buttons.set(ButtonType.DELETE, {title:"Удалить", action : actionFactory.getAction(ButtonType.DELETE), style: "btn-danger"} );
     this.buttons.set(ButtonType.BOOKMARK, {title:"", action : actionFactory.getAction(ButtonType.BOOKMARK), style: "btn-light"} );
   }
   

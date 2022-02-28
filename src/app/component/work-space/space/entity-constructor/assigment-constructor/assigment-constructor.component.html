@@ -1,0 +1,7 @@
+<div class="container" >    
+    <app-assigment-form (onInputForm) = "formInput($event,'ASSIGMENT')"></app-assigment-form>
+    
+      <button class="btn btn-primary" (click)="handelForm()">Сохранить</button>
+      <button class="btn btn-primary" (click)="handelForm('ACCEPT')">Подтвердить</button>
+      <button class="btn btn-primary" (click)="handelForm('DECLINE')">Отклонить</button>
+    </div>

@@ -9,7 +9,7 @@ import { EntityService } from './EntityService';
 })
 export abstract class BaseEntityService<H extends BaseHttpService<T>, T extends Dto > implements EntityService {
 
-  constructor( @Inject('H extends BaseHttpService<T>') private httpService : H) { 
+  constructor( @Inject('H extends BaseHttpService<T>') protected httpService : H) { 
       
   }
 
@@ -21,7 +21,17 @@ export abstract class BaseEntityService<H extends BaseHttpService<T>, T extends 
       return this.httpService.getPage(page);
   }
 
-  
+  public update(entity : T) : Observable<T> {
+    return this.httpService.update(entity);
+  }
+
+  public delete(id : number) : Observable<any> {
+    return this.httpService.delete(id);
+  }
+
+  public getAll(): Observable<any> {
+      return this.httpService.getAll();
+  }
 
 }
 

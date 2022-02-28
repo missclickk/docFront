@@ -11,7 +11,7 @@ export class ColumsFactoryService {
     this.buttons.set(TableType.ORGANIZATION, ["название","физический адрес","юридический адрес ","руководитель"]);
     this.buttons.set(TableType.EMPLOYEE, ["фамилия","имя","отчество","должность"] );
     this.buttons.set(TableType.SUBDIVIZON,["название","контактные данные","руководитель"]  );
-    this.buttons.set(TableType.ASSIGMENT, ["предмет","автор","исполнители","срок","исполнен","контроль"])
+    this.buttons.set(TableType.ASSIGMENT,  ["предмет","срок","исполнители","исполнен","контроль","автор"])
   }
   
   public getColumns( type : TableType) : string[]{

@@ -1,5 +1,5 @@
 <div class="app-workspace">
-<app-bookmarks-bar></app-bookmarks-bar>
-<app-work-space-menu [buttonsTypes] = "[buttonType.CREATE]"></app-work-space-menu>
+<app-bookmarks-bar  ></app-bookmarks-bar>
+<app-work-space-menu *ngIf="state.getCurrentBookmark()?.mode == 'ListOfEntityes'"   ></app-work-space-menu>
 <app-space></app-space>
 </div>  

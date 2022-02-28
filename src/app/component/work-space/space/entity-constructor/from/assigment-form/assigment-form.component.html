@@ -1,0 +1,26 @@
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Субьект</label>
+    <input type="text" class="form-control" placeholder="Субьект" value="{{state.getInputsForCurrentBookmark(formType)[0] }}"    (paste)="inputForm($event, 0 )" (input)="inputForm($event,0)">
+</div>
+<div class="form-group">
+    <label for="address">Период выполнения</label>
+    <input type="date" class="form-control" placeholder="Период выполнения" value="{{state.getInputsForCurrentBookmark(formType)[1] }}"  (paste)="inputForm($event, 1 )" (input)="inputForm($event,1)">
+</div>
+<div class="form-group">
+  <label for="legalAddress">Текст</label>
+  <input type="text" class="form-control"  placeholder="Текст" value="{{state.getInputsForCurrentBookmark(formType)[2] }}"  (paste)="inputForm($event, 2 )" (input)="inputForm($event,2)">
+</div>
+<div class="form-group">
+  <label for="legalAddress">Автор</label>
+  <select class="form-select" aria-label="Default select example"  (change)="inputForm($event, 3)" >
+    <option   *ngFor="let empl of empls"   value="{{empl.id}}">{{empl.name}}</option>
+  </select>
+</div>
+
+<div class="form-group">
+    <label for="legalAddress">Исполнители</label>
+    <select multiple class="form-control" [(ngModel)]="selectedExecutors">
+      <option *ngFor="let empl of empls" [ngValue]="empl.id" (click)="handelMultiple(4)"  >{{empl.name}}</option>
+    </select>
+  </div>

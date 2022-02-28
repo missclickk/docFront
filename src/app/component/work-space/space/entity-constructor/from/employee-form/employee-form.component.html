@@ -1,19 +1,24 @@
     <div class="form-group">
         <label for="exampleInputEmail1">Фамилия</label>
-        <input type="text" class="form-control" id="orgName"  placeholder="Фамилия" value="{{state.getInputsForCurrentBookmark(formType)[0]}}" (paste)="inputForm($event, 0 )" (input)="inputForm($event,0)">
+        <input type="text" class="form-control" id="orgName"  placeholder="Фамилия" value="{{state.getInputsForCurrentBookmark(formType)[0] }}" (paste)="inputForm($event, 0 )" (input)="inputForm($event,0)">
     </div>
     <div class="form-group">
         <label for="address">Имя</label>
-        <input type="text" class="form-control" id="address" placeholder="Имя" value="{{state.getInputsForCurrentBookmark(formType)[1]}}" (paste)="inputForm($event, 1 )" (input)="inputForm($event,1)">
+        <input type="text" class="form-control" placeholder="Имя" value="{{state.getInputsForCurrentBookmark(formType)[1] }}" (paste)="inputForm($event, 1 )" (input)="inputForm($event,1)">
     </div>
     <div class="form-group">
       <label for="legalAddress">Отчество</label>
-      <input type="text" class="form-control" id="legalAddress" placeholder="Отчество" value="{{state.getInputsForCurrentBookmark(formType)[2]}}" (paste)="inputForm($event, 2 )" (input)="inputForm($event,2)">
+      <input type="text" class="form-control"  placeholder="Отчество" value="{{state.getInputsForCurrentBookmark(formType)[2]  }}" (paste)="inputForm($event, 2 )" (input)="inputForm($event,2)">
     </div>
-    <div class="form-group"  *ngIf="state.getCurrentBookmark()?.table != 'ORGANIZATION'; then positionInput"></div>
+    <div class="form-group"  *ngIf="state.getCurrentBookmark()?.table == 'EMPLOYEE'; then positionInput"></div>
 
     <ng-template #positionInput>
         <label for="legalAddress">Должность</label>
-        <input type="text" class="form-control" id="legalAddress" placeholder="Должность" value="{{state.getInputsForCurrentBookmark(formType)[3]}}" (paste)="inputForm($event, 3 )" (input)="inputForm($event,3)">
+        <select class="form-select" aria-label="Default select example"  (change)="inputForm($event, 3)" >>
+            <option   *ngFor="let pos of positions"   value="{{pos.id}}">{{pos.name}}</option>
+          </select>
 
+          <select class="form-select" aria-label="Default select example"  (change)="inputForm($event, 4)" >>
+            <option   *ngFor="let subdiv of subdivisions"   value="{{subdiv.id}}">{{subdiv.name}}</option>
+          </select>   
     </ng-template>

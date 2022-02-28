@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label for="exampleInputEmail1">Название</label>
+    <input type="text" class="form-control" placeholder="Название" value="{{state.getInputsForCurrentBookmark(formType)[0]}}"   (paste)="inputForm($event, 0 )" (input)="inputForm($event,0)">
+</div>
+<div class="form-group">
+    <label for="address">Контактная информация</label>
+    <input type="text" class="form-control" placeholder="Контактная информация" value="{{state.getInputsForCurrentBookmark(formType)[1]}}"  (paste)="inputForm($event, 1 )" (input)="inputForm($event,1)">
+</div>
+<div class="form-group">
+    <label for="legalAddress">Организация</label>
+    <select class="form-select" aria-label="Default select example"  (change)="inputForm($event, 2)" >>
+        <option   *ngFor="let org of orgs"   value="{{org.id}}">{{org.name}}</option>
+      </select>
+  </div>

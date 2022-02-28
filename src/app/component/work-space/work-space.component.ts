@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ButtonType } from 'src/app/model/enum/buttonType';
+import { ModalService } from 'src/app/service/modal.service';
+import { StateService } from 'src/app/service/state.service';
 
 @Component({
   selector: 'app-work-space',
@@ -7,9 +8,7 @@ import { ButtonType } from 'src/app/model/enum/buttonType';
   styleUrls: ['./work-space.component.css']
 })
 export class WorkSpaceComponent implements OnInit {
-  public readonly buttonType = ButtonType;
-
-  constructor() { }
+  constructor(public state: StateService) { }
 
   ngOnInit(): void {
   }

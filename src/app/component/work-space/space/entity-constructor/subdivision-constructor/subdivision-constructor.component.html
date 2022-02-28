@@ -1,0 +1,19 @@
+<div class="container" >
+  <button type="button"  [ngClass]="{'btn-primary' : isOrgForm == true , 'btn-secondary' : isOrgForm == false  }"
+  class="btn"  (click) = "setFrom(true)" >Организация</button>
+  <button type="button"  [ngClass]="{'btn-primary' : isOrgForm == false , 'btn-secondary' : isOrgForm == true  }" 
+  class="btn" (click) = "setFrom(false)">Руководитель</button>
+  
+  <div *ngIf="isOrgForm == true; then orgBlock else supervisorBlock " ></div>
+
+  <ng-template #orgBlock>
+    <app-subdivision-form   (onInputForm) = "formInput($event,'SUBDIVIZON')" ></app-subdivision-form>
+  </ng-template>
+
+
+  <ng-template #supervisorBlock>
+      <app-employee-form  (onInputForm) = "formInput($event,'EMPLOYEE')"></app-employee-form>
+  </ng-template>
+  
+    <button class="btn btn-primary" (click)="handelForm()">Сохранить</button>
+  </div>
